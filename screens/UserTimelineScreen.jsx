@@ -1,0 +1,18 @@
+import { StatusBar } from 'expo-status-bar';
+import React, {useState} from 'react';
+import { View, SafeAreaView, ScrollView, TouchableOpacity} from 'react-native';
+import { Ionicons, FontAwesome, MaterialIcons, Entypo, EvilIcons } from '@expo/vector-icons';
+
+import MyText from '../components/MyText';
+ 
+const UserTimelineScreen = ({navigation}) => {
+
+    return (
+        <SafeAreaView className="flex-1 justify-center items-center w-screen bg-[#3B7CDD]">
+            <StatusBar style="light" />
+            <MyText content="UserTimeline Screen" className="text-white text-lg" />
+        </SafeAreaView>        
+    );
+}
+
+export default UserTimelineScreen;

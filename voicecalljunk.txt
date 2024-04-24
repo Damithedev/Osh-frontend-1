@@ -1,0 +1,43 @@
+import {
+  CallContent,
+  CallTopView,
+  StreamCall,
+  StreamVideo,
+  StreamVideoClient,
+  useCalls,
+  useStreamVideoClient,
+} from "@stream-io/video-react-native-sdk";
+import { useEffect, useState } from "react";
+import { View, Text, ActivityIndicator } from "react-native";
+
+const callId = "default_5032d108-5faf-432b-af36-f0d5bb6caeb7";
+
+const apiKey = "ftywcy4kp9sj";
+const userId = "kingware";
+const token =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoia2luZ3dhcmUifQ.0O3T7AYbDbByjYeVjq4ThYgKaNXpFA0RakDt1qwCBuE";
+const user = { id: userId };
+
+export default function VoiceCallScreen({ navigation }) {
+  const [client] = useState(
+    () => new StreamVideoClient({ apiKey, user, token })
+  );
+  const [call] = useState(() => client.call("default", callId));
+
+  useEffect(() => client.call("default", callId));
+
+  useEffect(() => {
+    call.join({ create: true });
+  }, [call]);
+
+  return (
+    <StreamVideo client={client}>
+      <StreamCall call={call}>
+        <CallContent
+          onHangupCallHandler={() => navigation.goBack()}
+          CallTopView={() => <CallTopView title={call.id} />}
+        />
+      </StreamCall>
+    </StreamVideo>
+  );
+}
