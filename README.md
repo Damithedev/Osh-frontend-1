@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This mobile app is developed with React Native Expo,
 Due to the Video call feature which requires native features, it was upgraded to expo-dev-client.
 link to expo-dev-client documentation > https://docs.expo.dev/development/create-development-builds/
@@ -20,3 +21,6 @@ On the IDE terminal run, run this command.
 Developer should know about expo-dev-client very well, it's quiet different from ordinary expo.
 To further help the developer, this is the link to run a development build for the app.
 https://docs.expo.dev/develop/development-builds/create-a-build/
+=======
+Front End Documentation
+>>>>>>> ae787e958fc38a73130d176ea00d0aad2c3123aa
