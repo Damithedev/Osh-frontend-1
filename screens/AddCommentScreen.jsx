@@ -21,7 +21,7 @@ import {
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
 import { useForm, Controller } from "react-hook-form";
-import * as ImagePicker from "expo-image-picker";
+import * as ImagePicker from "expo-image-picker"; 
 
 import { useSelector, useDispatch } from "react-redux";
 import { swiftNotifySwitch } from "../store/actions/swiftNotifyActions";
@@ -42,7 +42,7 @@ const AddCommentScreen = ({ route, navigation }) => {
   const channel = useSelector((state) => state.channel);
   const timeline = useSelector((state) => state.timeline);
 
-  useEffect(() => {
+  useEffect(() => {dddd
     timeline.message
       ? dispatch(swiftNotifySwitch(timeline.message, true))
       : null;
